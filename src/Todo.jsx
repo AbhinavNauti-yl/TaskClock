@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 export default function Todo() {
 
   const [task,change_main_list]=useState([
-    "Brush teeths",
-    "Take bath",
+    "Walk The Dog",
+    "Take Medicines",
   ])
 
   const [new_task,change_new_tak]=useState("")
