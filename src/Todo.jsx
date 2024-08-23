@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export default function Todo() {
-
-  const [task,change_main_list]=useState([
-    "Walk The Dog",
-    "Take Medicines",
-  ])
+  
+  // let innitialTask = ["Walk The Dog","Take Medicines",]
+  // localStorage.setItem("tasks", JSON.stringify(innitialTask))
+  const [array, setArray] = useState(JSON.parse(localStorage.getItem("tasks")) || [])
+  
 
   const [new_task,change_new_tak]=useState("")
 
@@ -15,37 +15,48 @@ export default function Todo() {
 
   const add=()=>{
     if(new_task!=""){
-      change_main_list([new_task,...task])
+      let temp = JSON.parse(localStorage.getItem("tasks")) || []
+      temp = [new_task, ...temp]
+      setArray(temp)
+      localStorage.setItem("tasks", JSON.stringify(temp))
       change_new_tak("")
     }
+
   }
 
   const del=(index)=>{
+    let task = JSON.parse(localStorage.getItem("tasks"))
     const temp=task.filter((element,i)=> i!=index)
-    change_main_list(temp)
+    setArray(temp)
+    localStorage.setItem("tasks", JSON.stringify(temp))
   }
 
   const up=(index)=>{
     if(index>0){
-      let temp=""
-      let temp2=[...task]
-      temp=temp2[index]
+      let temp2 = JSON.parse(localStorage.getItem("tasks"))
+      let temp=temp2[index]
       temp2[index]=temp2[index-1]
       temp2[index-1]=temp
-      change_main_list(temp2)
+      setArray(temp2)
+      localStorage.setItem("tasks", JSON.stringify(temp2))
     }
   }
 
   const down=(index)=>{
-    if(index<task.length - 1){
-      let temp=""
-      let temp2=[...task]
-      temp=temp2[index]
-      temp2[index]=temp2[index+1]
-      temp2[index+1]=temp
-      change_main_list(temp2)
+    if(index<array.length - 1){
+      let temp2 = JSON.parse(localStorage.getItem("tasks"))
+      let temp = temp2[index]
+      temp2[index] = temp2[index+1]
+      temp2[index+1] = temp
+      setArray(temp2)
+      localStorage.setItem("tasks", JSON.stringify(temp2))
     }
   }
+
+  // useEffect(() => {
+  //    JSON.parse(localStorage.getItem("tasks")) || []
+  // }, [])
+
 
   return (
     <>
@@ -58,7 +69,7 @@ export default function Todo() {
       <br></br>
       
       <ol className='lower'>
-        {task.map((task,index)=>
+        {array?.map((task,index)=>
           <li key={index}><span id='one'>{task}</span>
             <div className="btns">
               <button className='button_class' onClick={()=>del(index)}>delete</button>
