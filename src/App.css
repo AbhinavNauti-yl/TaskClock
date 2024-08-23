@@ -185,5 +185,7 @@ html,body {
 /* making it responsive */
 
 @media (max-width: 1200px) {
-  
+  *{
+    background-color: red;
+  }
 }
