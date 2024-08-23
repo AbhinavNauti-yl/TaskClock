@@ -184,6 +184,6 @@ html,body {
 
 /* making it responsive */
 
-/* @media  {
+@media (max-width: 1200px) {
   
-} */
+}
