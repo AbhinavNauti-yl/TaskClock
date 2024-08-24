@@ -180,12 +180,37 @@ html,body {
 }
 
 
+.calender{
+  height: 90%;
+  width: 90%;
+}
 
-
-/* making it responsive */
-
-@media (max-width: 1200px) {
-  *{
-    background-color: red;
+.sideBar{
+  height: 500px;
+  width: 60%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.553);
+  z-index: 10;
+  display: none;
+  flex-direction: column;
+  border-radius: 5px;
+  font-size: 3rem;
+  color: white;
+  ul{
+    list-style: none;
+    cursor: pointer;
+    
   }
+  ul:first-child{
+    position: relative;
+    right: 0px;
+  }
+
+}
+
+
+#menu{
+  display: none;
 }

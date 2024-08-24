@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import './mobile.css'
 
 
 import Nav from './Nav'
