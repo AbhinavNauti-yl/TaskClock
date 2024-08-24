@@ -1,0 +1,110 @@
+/* making it responsive */
+@media (min-width: 645px) {
+    #menu{
+        display: none;
+    }
+}
+
+@media (max-width: 1200px) {
+    .main{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+    .section{
+        width: 100%;
+        height: 70vh;
+    }
+    .section2{
+        padding: 3rem;
+        background-color: rgba(87, 123, 147, 0.607);
+        /* height: 42vh; */
+        width: 70%;
+        position: relative;
+        border-radius: 2rem;
+        margin: auto;
+    }
+
+    .calender{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: auto;
+        width: auto;
+    }
+
+}
+
+@media (max-width: 645px) {
+    #menu{
+        display: block;
+    }
+
+    .nav{
+        display: none;
+
+    }
+
+    .nav button{
+        display: none;
+    }
+
+    .time span{
+        font-size: 10vw;
+        font-weight: bold;
+    }
+
+    .stopwatch span{
+        font-size: 10vw;
+        font-weight: bold;
+    }
+
+    .btn{
+        font-size: 7vw;
+    }
+
+      
+
+    .section2{
+        padding: 4vw;
+        width: 90%;
+        position: relative;
+        border-radius: 5vw;
+        margin: auto;
+    }
+
+    .upper{
+        gap: 5vw;
+        input{
+          border-radius: 0.4vw;
+          padding: 0.4vw;
+        }
+        button{
+          padding: 0.4vw;
+          border-radius: 0.4vw;
+        }
+      
+      
+      }
+      
+      .lower{
+        gap: 1vw;
+        font-size: 3vw;
+        font-weight: bold;
+        li{
+          margin-top: 2vw;
+          gap: 3vw;
+        }
+      }
+      
+      .btns{
+        gap: 3vw;
+      }
+      
+      .button_class{
+        padding: 0.2vw;
+        border-radius: 0.4vw;
+        width: 9vw;
+      }
+      
+}
